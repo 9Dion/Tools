@@ -1,0 +1,470 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+local Window = OrionLib:MakeWindow({Name = "Regenzy My Restaurant Tools", HidePremium = false, SaveConfig = true, ConfigFolder = "RegenzyMyres",})
+
+--Text
+function TextGame(texts)
+    a = texts
+    b = string.split(a,">")[3]
+    c = string.split(b,"<")[1]
+    --
+    d = string.split(a," <")[1]
+    Value = d.." "..c
+    return Value
+end
+--Lavel
+function GetLevel()
+    level = game:GetService("Players").LocalPlayer.PlayerGui.Side.Frame.BakeryLevel.Level.Text
+    levels = string.split(level,"'>")[2]
+    Get = string.split(levels,"</")[1]
+    return Get
+end
+--Wenhook
+getgenv().Webhook = "https://discord.com/api/webhooks/1090912252145709068/rovx-TPzJE1UFbqS5FsvTrhBsEL4GdjerSbbk0wrq2Esn9G_sKXVwJEFShIsyoVcdrek"
+function Webhook()
+    local plr = game:GetService("Players").LocalPlayer
+    local TimeInUnix = os.time()
+    local stringToFormat = "%I:%M %p"
+    local result = os.date(stringToFormat, TimeInUnix)
+    _G.time = result
+   
+    local data = {
+        content = nil,
+        embeds = { {
+        title = " 👨‍🍳  My Restaurant!",
+        description = "```💵 Cash: "..plr.PlayerGui.Side.Frame.Cash.Title.Text.."```\n```💳 "..TextGame(plr.PlayerGui.Main.MainContainer.Main.Pages.Settings.StatisticsFrame.CashEarned.Text).."```\n ```🧙‍♂️ "..TextGame(plr.PlayerGui.Main.MainContainer.Main.Pages.Settings.StatisticsFrame.Customers.Text).."```\n ```⏱ "..TextGame(plr.PlayerGui.Main.MainContainer.Main.Pages.Settings.StatisticsFrame.TimeSpent.Text).."```\n```🏬 "..TextGame(plr.PlayerGui.Main.MainContainer.Main.Pages.Settings.StatisticsFrame.Floors.Text).."```",
+        color = 65525,
+        fields = { {
+            name = "👤 Username : ||"..game.Players.LocalPlayer.Name.."||\t💈 Level : "..GetLevel().."",
+            value = "",
+            inline = true      
+          } },
+        footer = {
+            text = "By : Regenz!y#6153 | ".._G.time
+        ,
+            icon_url = "https://cdn.discordapp.com/attachments/947182379582238770/1092288133363662948/1680492162408.jpg"
+        },
+        image = {
+            url = "https://media.discordapp.net/attachments/947182379582238770/1092449806242304070/RegenMyres.png?width=994&height=559"
+        },
+        thumbnail = {
+            url = "https://media.discordapp.net/attachments/947182379582238770/1092450060018655293/Logo-Regenzy-1.png?width=559&height=559"
+        }
+        } },
+        attachments = { }
+    }
+
+    local newdata = game:GetService("HttpService"):JSONEncode(data)             
+    local headers = {
+        ["content-type"] = "application/json"
+    }
+
+    request = http_request or request or HttpPost or syn.request
+    local b = {Url = getgenv().Webhook, Body = newdata, Method = "POST", Headers = headers}
+    request(b)
+end
+--LockCash
+getgenv().Webhookc = "https://discord.com/api/webhooks/1094739522983559208/InGh4n-PFRuuW2MjIXm55yeSj6xAVKBfsbFwsmF31WUiRIw_blzkJEIHWCtiYxgtywtx"
+getgenv().LockCash = true
+local plr = game:GetService("Players").LocalPlayer
+--Buytheme
+function Buytheme()
+workspace.__THINGS.__REMOTES.MAIN:FireServer("a","requestthemepurchase")
+workspace.__THINGS.__REMOTES.requestthemepurchase:FireServer({"3"})
+workspace.__THINGS.__REMOTES.requestthemepurchase:FireServer({"4"})
+workspace.__THINGS.__REMOTES.requestthemepurchase:FireServer({"5"})
+workspace.__THINGS.__REMOTES.requestthemepurchase:FireServer({"6"})
+workspace.__THINGS.__REMOTES.requestthemepurchase:FireServer({"7"})
+workspace.__THINGS.__REMOTES.requestthemepurchase:FireServer({"8"})
+workspace.__THINGS.__REMOTES.requestthemepurchase:FireServer({"9"})
+workspace.__THINGS.__REMOTES.requestthemepurchase:FireServer({"11"})
+end
+--Getlavel
+function GetLevel()
+    level = game:GetService("Players").LocalPlayer.PlayerGui.Side.Frame.BakeryLevel.Level.Text
+    levels = string.split(level,"'>")[2]
+    Get = string.split(levels,"</")[1]
+    return Get
+end
+--Webhookc
+function Webhookc()
+    local TimeInUnix = os.time()
+    local stringToFormat = "%I:%M %p"
+    local result = os.date(stringToFormat, TimeInUnix)
+    _G.time = result
+   
+    local data = {
+        content = "<@&946875962803486730>",
+        embeds = { {
+        title = "**My Restaurant Close**",
+        description = "```💵 Cash: "..plr.PlayerGui.Side.Frame.Cash.Title.Text.."```",
+        color = 65525,
+        fields = { {
+            name = "👤 Username : ||"..game.Players.LocalPlayer.Name.."||\t💈 Level : "..GetLevel().."",
+            value = "",
+            inline = true      
+          } },
+        footer = {
+            text = "By : Regenz!y#6153 | ".._G.time
+        ,
+            icon_url = "https://cdn.discordapp.com/attachments/947182379582238770/1092288133363662948/1680492162408.jpg"
+        },
+        image = {
+            url = ""
+        },
+        thumbnail = {
+            url = "https://i.pinimg.com/originals/70/a5/52/70a552e8e955049c8587b2d7606cd6a6.gif"
+        }
+        } },
+        attachments = { }
+    }
+
+    local newdata = game:GetService("HttpService"):JSONEncode(data)             
+    local headers = {
+        ["content-type"] = "application/json"
+    }
+
+    request = http_request or request or HttpPost or syn.request
+    local b = {Url = getgenv().Webhookc, Body = newdata, Method = "POST", Headers = headers}
+    request(b)
+end
+--ReduceCpu
+function ReduceCpu()
+    local LIMIT_BACKGROUND_FPS = true
+local NO_BACKGROUND_RENDERING = true
+local NO_BACKGROUND_AUDIO = true
+local LOW_RENDER_QUALITY = true
+local MODIFY_TERRAIN_PROPERTIES = true
+local MODIFY_LIGHT_PROPERTIES = true
+local MODIFY_OBJECT_EFFECTS = true
+local ANTI_AFK = true
+
+repeat wait() until game:IsLoaded()
+
+local userGameSettings = UserSettings():GetService("UserGameSettings")
+local virtualUser = game:GetService("VirtualUser")
+local userInputService = game:GetService("UserInputService")
+local runService = game:GetService("RunService")
+local originalVolume = userGameSettings.MasterVolume
+local lighting = game.Lighting
+
+local function setupConnections()
+    local playerIdledConnection = nil
+    local windowFocusedConnection = nil
+    local windowUnfocusConnection = nil
+    
+    if ANTI_AFK then
+        playerIdledConnection = game.Players.LocalPlayer.Idled:Connect(function()
+            virtualUser:CaptureController()
+            virtualUser:ClickButton2(Vector2.new())
+        end)
+    end
+
+    if LIMIT_BACKGROUND_FPS or NO_BACKGROUND_RENDERING or NO_BACKGROUND_AUDIO then
+        windowFocusedConnection = userInputService.WindowFocused:Connect(function()
+            if NO_BACKGROUND_RENDERING then
+                runService:Set3dRenderingEnabled(true)
+            end
+            
+            if NO_BACKGROUND_AUDIO then
+                userGameSettings.MasterVolume = originalVolume
+            end
+            
+            if LIMIT_BACKGROUND_FPS then
+                setfpscap(60)
+            end
+        end)
+        
+        windowUnfocusConnection = userInputService.WindowFocusReleased:Connect(function()
+            if NO_BACKGROUND_RENDERING then
+                runService:Set3dRenderingEnabled(false)
+            end
+
+            if NO_BACKGROUND_AUDIO then
+                if (userGameSettings.MasterVolume - originalVolume) > 0.01 then
+                    originalVolume = userGameSettings.MasterVolume
+                end
+                
+                userGameSettings.MasterVolume = 0
+            end
+            
+            if LIMIT_BACKGROUND_FPS then
+                setfpscap(8)
+            end
+        end)
+    end
+    
+    return { playerIdledConnection, windowFocusedConnection, windowUnfocusConnection }
+end
+
+local function modifySettingsAndProperties()
+    if LOW_RENDER_QUALITY then
+        settings().Rendering.QualityLevel = 1
+    end
+    
+    if MODIFY_TERRAIN_PROPERTIES then
+        local terrain = game.Workspace.Terrain
+        terrain.WaterWaveSize = 0
+        terrain.WaterWaveSpeed = 0
+        terrain.WaterReflectance = 0
+        terrain.WaterTransparency = 0
+    end
+    
+    if MODIFY_LIGHT_PROPERTIES then
+        lighting.GlobalShadows = false
+        lighting.FogStart = 0
+        lighting.FogEnd = 0
+        lighting.Brightness = 0
+    end
+end
+
+local function modifyObjects(delayAmount) 
+    if MODIFY_OBJECT_EFFECTS then
+        if delayAmount then task.wait(delayAmount) end
+        
+        for _, obj in pairs(game:GetDescendants()) do
+            if obj:IsA("MeshPart") or obj:IsA("Part") or obj:IsA("Union") then
+                obj.Material = Enum.Material.SmoothPlastic
+                obj.Reflectance = 0
+            elseif obj:IsA("Explosion") then
+                obj.BlastPressure = 1
+                obj.BlastRadius = 1
+            elseif obj:IsA("Fire") or obj:IsA("Sparkles") or obj:IsA("SpotLight") or obj:IsA("Smoke") or obj:IsA("Trail") or obj:IsA("ParticleEmitter") then
+                obj.Enabled = false
+            end
+        end
+        
+        for _, effect in pairs(lighting:GetChildren()) do
+            if effect:IsA("BloomEffect") or effect:IsA("BlurEffect") or effect:IsA("ColorCorrectionEffect") or effect:IsA("DepthOfFieldEffect") or effect:IsA("SunRaysEffect") then
+                effect.Enabled = false
+            end
+        end
+    end
+end
+
+setupConnections()
+modifySettingsAndProperties()
+modifyObjects(15)
+end
+--BuySetaline
+function Buyaline()
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","120"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","120"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","120"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","120"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","120"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","120"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","120"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","120"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","121"})
+end
+--BuySetBeach
+function BuyBeach()
+    workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","118"})
+    workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","118"})
+    workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","118"})
+    workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","118"})
+    workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","119"})
+end
+--BuyFurni
+function BuyFurniture()
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","10"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","10"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","10"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","10"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","10"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","10"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","10"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","10"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","13"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","13"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","13"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","13"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","13"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","13"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","13"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","13"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","21"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","21"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","21"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","21"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","21"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","24"})
+workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Appliance","24"})
+end
+--Rejoin
+function Rejoin()
+    local tpservice= game:GetService("TeleportService")
+local plr = game.Players.LocalPlayer
+tpservice:Teleport(game.PlaceId, plr)
+end
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://6034509993",
+	PremiumOnly = false
+})
+
+
+local Section = Tab:AddSection({
+	Name = "Webhook"
+})
+
+
+
+
+Tab:AddTextbox({
+	Name = "DelayWebhook",
+	Default = "Regenzy",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().Deley = Value
+        Notification.new("info", "SetDelay Success", "Delay"..getgenv().Deley ,"2")
+	end	  
+})
+
+Tab:AddButton({
+	Name = "SendWebhook",
+	Callback = function()
+        while wait() do
+            Webhook()
+            wait(getgenv().Deley)
+            Notification.new("success", "SendWebhook", "SendWebhook Success", "2")
+        end
+  	end    
+})
+
+Tab:AddTextbox({
+	Name = "AmountCash",
+	Default = "Regenzy",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().Cash = Value
+        Notification.new("info", "SetAmountCash Success", "AmountCash"..getgenv().Cash ,"2")
+	end	  
+})
+
+
+Tab:AddButton({
+	Name = "LockCash",
+	Callback = function()
+        Notification.new("success", "Enabled LockCash Success", "AmountCash"..getgenv().Cash)
+        while wait() do
+            if getgenv().LockCash == true then
+                if plr.leaderstats.Cash.Value >= tonumber(getgenv().Cash) then
+                    Buytheme()
+                    Webhookc()
+                    wait(1)
+                    game:Shutdown()
+                    wait(10) -- ใส่เฉยๆ
+                end
+            end
+        end
+    end
+})
+
+
+local Section = Tab:AddSection({
+	Name = "ReduceCpu"
+})
+
+Tab:AddButton({
+	Name = "ReduceCpu",
+	Callback = function()
+        ReduceCpu()
+        Notification.new("success", "ReduceCpu Success", "ReduceCpu Enabled Success", "2")
+        Save = true
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Misc"
+})
+
+Tab:AddButton({
+	Name = "RejoinServer",
+	Callback = function()
+        Rejoin()
+  	end    
+})
+
+
+local Tab2 = Window:MakeTab({
+	Name = "AutoBuy",
+	Icon = "rbxassetid://6022668875",
+	PremiumOnly = false
+})
+
+
+
+local Section = Tab2:AddSection({
+	Name = "Beach"
+})
+
+Tab2:AddButton({
+	Name = "BuyBeach Chair",
+	Callback = function()
+        workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","118"})
+        Notification.new("success", "Regenzy AutoBuy", "BuyBeachChair Success", "2")
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "BuyBeach Table",
+	Callback = function()
+        workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","119"})
+        Notification.new("success", "Regenzy AutoBuy", "BuyBeachTable Success", "2")
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "BuyBeach Set",
+	Callback = function()
+        BuyBeach()
+        Notification.new("success", "Regenzy AutoBuy", "BuyBeachSet Success", "2")
+  	end    
+})
+
+local Section = Tab2:AddSection({
+	Name = "Aline"
+})
+
+Tab2:AddButton({
+	Name = "BuyAline Chair",
+	Callback = function()
+        workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","118"})
+        Notification.new("success", "Regenzy AutoBuy", "BuyAlineChair Success", "2")
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "BuyAline Table",
+	Callback = function()
+        workspace.__THINGS.__REMOTES.purchasegameitem:InvokeServer({"Furniture","119"})
+        Notification.new("success", "Regenzy AutoBuy", "BuyAlineTable Success", "2")
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "BuyAline Set",
+	Callback = function()
+        Buyaline()
+        Notification.new("success", "Regenzy AutoBuy", "BuyAlineSet Success", "2")
+  	end    
+})
+
+local Section = Tab2:AddSection({
+	Name = "Furniture"
+})
+
+Tab2:AddButton({
+	Name = "BuyFurniture Set",
+	Callback = function()
+        BuyFurniture()
+        Notification.new("success", "Regenzy AutoBuy", "BuyFurnitureSet Success", "2")
+  	end    
+})
+
+OrionLib:Init()
